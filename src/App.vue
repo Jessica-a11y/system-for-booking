@@ -1,13 +1,24 @@
-<script setup>
+<script>
+  import EmployeeService from './components/EmployeeService';
 
+  export default {
+    data() {
+        return {
+            employees: []
+        }
+    },
+    created() {
+        EmployeeService.getEmployees().then(em => this.employees = em)
+    }
+  }
 </script>
 
 <template>
-  <div class="employee-overview">
+  <div class="employee-overview" v-for="em in employees">
     <img src="./assets/user.png" alt="User imag" />
     <div>
-      <span class="employee-profession">Plumer</span><br>
-      <span class="employee-name">Maria</span>
+      <span class="employee-profession">{{ em.professions.join(' & ') }}</span><br>
+      <span class="employee-name">{{ em.name }}</span>
     </div>
   </div>
 </template>
