@@ -1,20 +1,5 @@
-<script>
-  import EmployeeService from './services/EmployeeService';
-
-  export default {
-    data() {
-        return {
-            employees: []
-        }
-    },
-    created() {
-        EmployeeService.getEmployees().then(em => this.employees = em)
-    }
-  }
-</script>
-
 <template>
-  <div class="employee-overview" v-for="em in employees">
+    <div class="employee-overview" v-for="em in employees">
     <img src="./assets/user.png" alt="User imag" />
     <div>
       <span class="employee-profession">{{ em.professions.join(' & ') }}</span><br>
@@ -23,8 +8,20 @@
   </div>
 </template>
 
-<style scoped>
+<script>
+    export default {
+        name: 'EmployeeCard',
+        props: {
+            employee : {
+                type: Object,
+                required: true
+            }
+        }
+    }
 
+</script> 
+
+<style>
 .employee-overview {
     display: flex;
     align-items: center;
@@ -42,5 +39,4 @@
 }
 .employee-name {
     font-weight: bold;
-}
-</style>
+}</style>
