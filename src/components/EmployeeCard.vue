@@ -1,42 +1,99 @@
 <template>
-    <div class="employee-overview" v-for="em in employees">
-    <img src="./assets/user.png" alt="User imag" />
-    <div>
-      <span class="employee-profession">{{ em.professions.join(' & ') }}</span><br>
-      <span class="employee-name">{{ em.name }}</span>
+    <div class="booking-card">
+        <div class="header">
+            <img :src="avatar" alt="User pic" class="avatar" />
+            <div class="title">
+                <div class="profession">{{ profession }}</div>
+                <div class="name">{{ name }}</div>
+            </div>
+        </div>
+
+        <div class="status">
+            <span class="status-icon"></span>
+            <span class="status-text">{{ status }}</span>
+        </div>
+
+        <div class="datetime">
+            {{ date }}<br />
+            {{ time }}
+        </div>
+
+        <div class="info">
+            <div><strong>Arbetstyp:</strong> {{ workType }}</div>
+            <div><strong>Arbetsplats:</strong> <br/> {{ workplace }}</div>
+            <div><strong>Kontakt:</strong> {{ contact }}</div>
+        </div>
     </div>
-  </div>
 </template>
 
-<script>
-    export default {
-        name: 'EmployeeCard',
-        props: {
-            employee : {
-                type: Object,
-                required: true
-            }
-        }
-    }
+<script setup>
+defineProps({
+    employeeImage: String,
+    profession: String,
+    name: String,
+    status: String,
+    date: String,
+    time: String,
+    workType: String,
+    workplace: String,
+    contact: String,
+    avatar: String,
+})
+</script>
 
-</script> 
+<style scoped>
+.booking-card {
+    width: 220px;
+    padding: 1rem;
+    background: #E1E1E1;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: sans-serif;
+    font-size: 14px;
+}
 
-<style>
-.employee-overview {
+.header {
     display: flex;
     align-items: center;
-    border: 1px solid black;
+    margin-bottom: 0.5rem;
 }
 
-.employee-overview > img {
-    width: 34px;
-    height: 34px;
-    margin-inline: 0.5rem;
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
 }
 
-.employee-profession {
-    font-size:small;
+.title .profession {
+    font-size: 12px;
+    color: gray;
 }
-.employee-name {
+
+.title .name {
     font-weight: bold;
-}</style>
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 0;
+}
+
+.status-icon {
+    width: 17px;
+    height: 17px;
+    background-color: #FF8000;
+    margin-right: 0.5rem;
+}
+
+.datetime {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.info {
+    line-height: 1.4;
+}
+</style>
+>>>>>>> main
