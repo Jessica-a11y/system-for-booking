@@ -1,8 +1,12 @@
+<script setup>
+import EmployeeCard from './components/EmployeeCard.vue';
+import avatar from './assets/cartoon-picture.png';
+import EmployeeTag from './components/EmployeeTag.vue';
+import ScheduleStatus from './components/ScheduleStatus.vue';
+</script>
+
 <script>
   import EmployeeService from './services/EmployeeService';
-  import EmployeeTag from './components/EmployeeTag.vue';
-  import employeeImg from './assets/user.png';
-
 
 export default {
   data() {
@@ -16,11 +20,7 @@ export default {
 }
 </script>
 
-<script setup>
-import EmployeeCard from './components/EmployeeCard.vue';
-import avatar from './assets/cartoon-picture.png';
 
-</script>
 
 <template>
   <div class="header">
@@ -32,34 +32,40 @@ import avatar from './assets/cartoon-picture.png';
       date="2025-04-30 (Ons)" time="08.00–16.00" workType="Snickare" workplace="Mölndals Kommun -Byggplats A"
       contact="031-88 66 55" />
   </div>
-  <div>
-    <EmployeeTag  v-for="em in employees" :employeeImg="employeeImg" :name="em.name" :professions="em.professions"></EmployeeTag>
+  <div class="schedule-planner">
+    <EmployeeTag :name="employees[0].name" :professions="employees[0].professions"></EmployeeTag>
+    <ScheduleStatus></ScheduleStatus>
   </div>
 </div>
-  
 </template>
 
 <style scoped>
   body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
+  }
 
-.header{
-    background-color: #434446;
-    color:#CFCFCF;
-    margin: 0;
-}
+  .header{
+      background-color: #434446;
+      color:#CFCFCF;
+      margin: 0;
+  }
 
-h1 {
-    margin:0;
-    font-size: large;
-    padding-block: 0.7rem;
-    padding-left: 1.5rem;
-}
+  h1 {
+      margin:0;
+      font-size: large;
+      padding-block: 0.7rem;
+      padding-left: 1.5rem;
+  }
 
-.main{
-  display: grid;
-  grid-template-columns: 1fr 5fr;
-}
+  .main{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+  }
 
+  .schedule-planner {
+    display: flex;
+    flex-direction: column;
+  }
 </style>
+
+<!--  v-for="em in employees" -->

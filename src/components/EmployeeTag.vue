@@ -9,8 +9,9 @@
 </template>
 
 <script setup>
+import employeeImg from '../assets/user.png';
+
     defineProps({
-        employeeImg: String,
         name: String,
         professions: Array
     })
@@ -34,6 +35,7 @@
 }
 .employee-name {
     font-weight: bold;
-}</style>
+}
+</style>
 
 
