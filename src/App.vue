@@ -3,10 +3,12 @@ import EmployeeCard from './components/EmployeeCard.vue';
 import avatar from './assets/cartoon-picture.png';
 import EmployeeTag from './components/EmployeeTag.vue';
 import ScheduleStatus from './components/ScheduleStatus.vue';
+import ScheduleOverview from './components/ScheduleOverview.vue';
 </script>
 
 <script>
   import EmployeeService from './services/EmployeeService';
+import ScheduleOverview from './components/ScheduleOverview.vue';
 
 export default {
   data() {
@@ -33,8 +35,7 @@ export default {
       contact="031-88 66 55" />
   </div>
   <div class="schedule-planner">
-    <EmployeeTag :name="employees[0].name" :professions="employees[0].professions"></EmployeeTag>
-    <ScheduleStatus></ScheduleStatus>
+    <ScheduleOverview :name="employees[0]?.name" :professions="employees[0]?.professions"></ScheduleOverview>
   </div>
 </div>
 </template>

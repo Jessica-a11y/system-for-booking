@@ -2,7 +2,7 @@
      <div class="employee-overview">
     <img :src="employeeImg" alt="User imag" />
     <div>
-      <span class="employee-profession">{{ professions.join(' & ') }}</span><br>
+      <span class="employee-profession">{{ professions?.join(' & ') }}</span><br>
       <span class="employee-name">{{ name }}</span>
     </div>
   </div>
@@ -21,7 +21,7 @@ import employeeImg from '../assets/user.png';
 .employee-overview {
     display: flex;
     align-items: center;
-    border: 1px solid black;
+    border: 1px solid #E7E7E7;
 }
 
 .employee-overview > img {

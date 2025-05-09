@@ -1,7 +1,12 @@
 <template>
-    <div>
-        
+    <div class="schedule-overview-style">
+        <EmployeeTag :name="name" :professions="professions"></EmployeeTag>
+        <ScheduleStatus></ScheduleStatus>
+        <ScheduleStatus></ScheduleStatus>
+        <ScheduleStatus></ScheduleStatus>
+        <ScheduleStatus></ScheduleStatus>
     </div>
+  
 </template>
 
 <script setup>
@@ -13,3 +18,13 @@ defineProps({
     professions: Array
 })
 </script>
+
+<style scope>
+.schedule-overview-style {
+    display: flex;
+    border: 1px solid black;
+    justify-content: space-between;
+    margin-inline: 1rem;
+    background-color: #F1F1F1;
+}
+</style>
