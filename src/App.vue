@@ -24,16 +24,18 @@ import avatar from './assets/cartoon-picture.png';
 
 <template>
   <div class="header">
-            <h1>Svenssons Hantverk AB</h1>
-        </div>
-  <EmployeeCard :avatar="avatar" profession="Snickare" name="Joakim Ihlström" status="Bokad"
-    date="2025-04-30 (Ons)" time="08.00–16.00" workType="Snickare" workplace="Mölndals Kommun -Byggplats A"
-    contact="031-88 66 55" />
-
-  <div class="employee-overview">
+    <h1>Svenssons Hantverk AB</h1>
+  </div>
+  <div class="main">
+  <div>
+    <EmployeeCard :avatar="avatar" profession="Snickare" name="Joakim Ihlström" status="Bokad"
+      date="2025-04-30 (Ons)" time="08.00–16.00" workType="Snickare" workplace="Mölndals Kommun -Byggplats A"
+      contact="031-88 66 55" />
+  </div>
+  <div>
     <EmployeeTag  v-for="em in employees" :employeeImg="employeeImg" :name="em.name" :professions="em.professions"></EmployeeTag>
   </div>
-
+</div>
   
 </template>
 
@@ -53,6 +55,11 @@ h1 {
     font-size: large;
     padding-block: 0.7rem;
     padding-left: 1.5rem;
+}
+
+.main{
+  display: grid;
+  grid-template-columns: 1fr 5fr;
 }
 
 </style>
