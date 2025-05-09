@@ -1,0 +1,66 @@
+<template>
+    <div class="checkBox-professions">
+        <h3>Yrkesroll</h3>
+
+        <div class="checkbox-item">
+        <input type="checkbox" id="profession-choice1" value="Carpenter" v-model="professionChoices" />
+        <label for="carpenter">Carpenter</label>
+    </div>
+        <div class="checkbox-item">
+        <input type="checkbox" id="profession-choice2" value="Painter" v-model="professionChoices" />
+        <label for="painter">Painter</label>
+    </div>
+        <div class="checkbox-item">
+        <input type="checkbox" id="profession-choice3" value="Electrician" v-model="professionChoices" />
+        <label for="electrician">Electrician</label>
+    </div>
+        <div class="checkbox-item">
+            <input type="checkbox" id="profession-choice4" value="Bricklayer" v-model="professionChoices" />
+            <label for="bricklayer">Bricklayer</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox" id="profession-choice5" value="Plumber" v-model="professionChoices" />
+            <label for="plumber">Plumber</label>
+        </div>
+    </div>
+
+</template>
+
+<script setup>
+
+import { ref } from 'vue';
+const professionChoices = ref([]);
+
+</script>
+
+<style scoped>
+
+h3 {
+    font-weight: bold;
+}
+.checkBox-professions {
+    display: flex;
+    flex-direction: column;
+    background-color: #F2F2F2;
+    gap: 0.5rem;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    color: #333333;
+}
+input[type=checkbox] {
+  accent-color: #E1E1E1;
+  background-color: #E1E1E1;
+
+  
+}
+
+
+
+
+</style>

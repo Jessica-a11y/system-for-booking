@@ -13,15 +13,17 @@
             <span class="status-text">{{ status }}</span>
         </div>
 
-        <div class="datetime">
-            {{ date }}<br />
+        <div class="date">
+            {{ date }}
+            </div>
+            <div class="time">
             {{ time }}
         </div>
 
         <div class="info">
-            <div><strong>Arbetstyp:</strong> {{ workType }}</div>
-            <div><strong>Arbetsplats:</strong> <br/> {{ workplace }}</div>
-            <div><strong>Kontakt:</strong> {{ contact }}</div>
+            <div>Type of work: {{ workType }} </div>
+            <div>Workplace: <br /> {{ workplace }}</div>
+            <div>Contact: {{ contact }}</div>
         </div>
     </div>
 </template>
@@ -48,7 +50,7 @@ defineProps({
     background: #E1E1E1;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    font-family: sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
 }
 
@@ -59,8 +61,8 @@ defineProps({
 }
 
 .avatar {
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     margin-right: 0.5rem;
 }
@@ -87,10 +89,10 @@ defineProps({
     margin-right: 0.5rem;
 }
 
-.datetime {
+.time {
     font-weight: bold;
     margin-bottom: 0.5rem;
-}
+    }
 
 .info {
     line-height: 1.4;

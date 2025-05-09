@@ -2,6 +2,7 @@
 import EmployeeCard from './components/EmployeeCard.vue';
 import avatar from './assets/cartoon-picture.png';
 import ScheduleOverview from './components/ScheduleOverview.vue';
+import LeftMenuSelector from './components/LeftMenuSelector.vue';
 </script>
 
 <script>
@@ -25,11 +26,16 @@ export default {
     <h1>Svenssons Hantverk AB</h1>
   </div>
   <div class="main">
-  <div>
-    <EmployeeCard :avatar="avatar" profession="Snickare" name="Joakim Ihlström" status="Bokad"
-      date="2025-04-30 (Ons)" time="08.00–16.00" workType="Snickare" workplace="Mölndals Kommun -Byggplats A"
+  <div class="left-menu">
+    <div class="booking-card"><EmployeeCard :avatar="avatar" profession="Carpenter" name="Joakim Ihlström" status="Booked"
+      date="2025-04-30 (Wed)" time="08.00–16.00" workType="Carpenter" workplace="Mölndals Stad - Building Site A"
       contact="031-88 66 55" />
+    </div>
+    <div class="checkboxes-professions">
+      <LeftMenuSelector />
+    </div>
   </div>
+
   <div class="schedule-planner">
     <ScheduleOverview :name="employees[0]?.name" :professions="employees[0]?.professions"></ScheduleOverview>
   </div>
@@ -57,6 +63,26 @@ export default {
   .main{
     display: grid;
     grid-template-columns: 1fr 5fr;
+  }
+
+  .left-menu {
+    width: 100%;
+    flex-direction: column;
+    background-color:  #F2F2F2;
+    margin-right: 5rem;
+  }
+
+  .checkboxes-professions {
+    margin-left: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .booking-card {
+    width: 10rem;
+    margin: 1.4rem;
+    margin-top: 4rem;
+    border-radius: 0%;
+    font-size: small;
   }
 
   .schedule-planner {
