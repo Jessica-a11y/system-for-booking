@@ -5,7 +5,7 @@ import ScheduleOverview from './components/ScheduleOverview.vue';
 </script>
 
 <script>
-  import EmployeeService from './services/EmployeeService';
+import EmployeeService from './services/EmployeeService';
 import ScheduleOverview from './components/ScheduleOverview.vue';
 
 export default {
@@ -19,8 +19,6 @@ export default {
   }
 }
 </script>
-
-
 
 <template>
   <div class="header">
