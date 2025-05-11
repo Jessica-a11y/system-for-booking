@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button ></button>
+        <button :style = "{ backgroundColor: color }"></button>
         <button></button>
         <button></button>
         <button></button>
@@ -8,7 +8,12 @@
 </template>
 
 <script setup>
-    
+
+let colorArray = ["#FF8000", "#800080", "#008080", "#FFD700"]
+  function setColor() {
+    return colorArray[Math.floor(Math.random() * colorArray.length)]
+  } 
+  let color = setColor()
 </script>
 
 <style scoped>
