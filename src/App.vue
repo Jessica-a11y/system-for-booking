@@ -3,6 +3,7 @@ import EmployeeCard from './components/EmployeeCard.vue';
 import avatar from './assets/cartoon-picture.png';
 import ScheduleOverview from './components/ScheduleOverview.vue';
 import LeftMenuSelector from './components/LeftMenuSelector.vue';
+import ScheduleHeader from './components/ScheduleHeader.vue';
 </script>
 
 <script>
@@ -37,6 +38,7 @@ export default {
   </div>
 
   <div class="schedule-planner">
+    <ScheduleHeader></ScheduleHeader>
     <ScheduleOverview v-for="em in employees" :name="em?.name" :professions="em?.professions"></ScheduleOverview>
   </div>
 </div>
@@ -88,6 +90,9 @@ export default {
   .schedule-planner {
     display: flex;
     flex-direction: column;
+    background-color: #F1F1F1;
+    margin-inline: 1rem;
+    margin-block: 2rem;
   }
 </style>
 

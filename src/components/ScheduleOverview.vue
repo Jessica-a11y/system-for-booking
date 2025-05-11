@@ -13,6 +13,7 @@
 import EmployeeTag from './EmployeeTag.vue';
 import ScheduleStatus from './ScheduleStatus.vue';
 
+
 defineProps({
     name: String,
     professions: Array
@@ -22,8 +23,6 @@ defineProps({
 <style scope>
 .schedule-overview-style {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    background-color: #F1F1F1;
-    margin-inline: 1rem;
+    grid-template-columns: repeat(5, 1fr);
 }
 </style>
