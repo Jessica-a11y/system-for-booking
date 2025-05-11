@@ -23,8 +23,9 @@ defineProps({
 .schedule-overview-style {
     display: flex;
     border: 1px solid black;
-    justify-content: space-around;
-    margin-inline: 1rem;
+    justify-content: space-between;
     background-color: #F1F1F1;
+    margin-inline: 1rem;
+    padding-inline-end: 0.5rem;
 }
 </style>

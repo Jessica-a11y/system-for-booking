@@ -37,7 +37,7 @@ export default {
   </div>
 
   <div class="schedule-planner">
-    <ScheduleOverview :name="employees[0]?.name" :professions="employees[0]?.professions"></ScheduleOverview>
+    <ScheduleOverview v-for="em in employees" :name="em?.name" :professions="em?.professions"></ScheduleOverview>
   </div>
 </div>
 </template>

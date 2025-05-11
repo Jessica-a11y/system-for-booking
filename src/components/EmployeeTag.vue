@@ -21,7 +21,9 @@ import employeeImg from '../assets/user.png';
 .employee-overview {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     border: 1px solid #E7E7E7;
+    padding-inline: 0.5rem;
 }
 
 .employee-overview > img {
@@ -34,6 +36,7 @@ import employeeImg from '../assets/user.png';
     font-size:small;
 }
 .employee-name {
+    font-size: 0.9rem;
     font-weight: bold;
 }
 </style>
