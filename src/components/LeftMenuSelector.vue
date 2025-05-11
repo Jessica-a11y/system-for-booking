@@ -3,17 +3,17 @@
         <h3>Yrkesroll</h3>
 
         <div class="checkbox-item">
-        <input type="checkbox" id="profession-choice1" value="Carpenter" v-model="professionChoices" />
-        <label for="carpenter">Carpenter</label>
-    </div>
+            <input type="checkbox" id="profession-choice1" value="Carpenter" v-model="professionChoices" />
+            <label for="carpenter">Carpenter</label>
+        </div>
         <div class="checkbox-item">
-        <input type="checkbox" id="profession-choice2" value="Painter" v-model="professionChoices" />
-        <label for="painter">Painter</label>
-    </div>
+            <input type="checkbox" id="profession-choice2" value="Painter" v-model="professionChoices" />
+            <label for="painter">Painter</label>
+        </div>
         <div class="checkbox-item">
-        <input type="checkbox" id="profession-choice3" value="Electrician" v-model="professionChoices" />
-        <label for="electrician">Electrician</label>
-    </div>
+            <input type="checkbox" id="profession-choice3" value="Electrician" v-model="professionChoices" />
+            <label for="electrician">Electrician</label>
+        </div>
         <div class="checkbox-item">
             <input type="checkbox" id="profession-choice4" value="Bricklayer" v-model="professionChoices" />
             <label for="bricklayer">Bricklayer</label>
@@ -29,15 +29,18 @@
 <script setup>
 
 import { ref } from 'vue';
-const professionChoices = ref([]);
+const professionChoices = ref([
+    'Carpenter',
+    'Painter'
+]);
 
 </script>
 
 <style scoped>
-
 h3 {
     font-weight: bold;
 }
+
 .checkBox-professions {
     display: flex;
     flex-direction: column;
@@ -53,14 +56,15 @@ h3 {
     font-size: small;
     color: #333333;
 }
-input[type=checkbox] {
-  accent-color: #E1E1E1;
-  background-color: #E1E1E1;
 
-  
+input[type=checkbox] {
+    accent-color: #E1E1E1;
+    background-color: #E1E1E1;
+
 }
 
+input[type=checkbox]:checked::before {
 
-
-
+    background-color: #E1E1E1;
+}
 </style>
