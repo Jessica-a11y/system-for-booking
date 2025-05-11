@@ -20,10 +20,9 @@ let colorArray = ["#FF8000", "#800080", "#008080", "#FFD700"]
 <style scoped>
 .status-bar {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  align-items: center;
+  grid-template-columns: repeat(5, 1fr);
   padding-inline: 1.5rem;
-  
+  place-items: center;
 }
 
 button{

@@ -1,8 +1,12 @@
 <template>
     <div class="schedule-header">
-        <input  type="text" placeholder="Search.."/>
+        <div class="search-bar">
+            <img :src="searchLogo" alt="search logo">
+            <input  type="text" placeholder="Search for personnel"/>
+        </div>
+        
         <div class="schedule-header-dates">
-            <h4>Week 20 (18/4-2/5)</h4>
+            <h4>Week 18 (18/4-2/5)</h4>
             <div class="days">
                 <span>Mon</span>
                 <span>Tue</span>
@@ -11,19 +15,63 @@
                 <span>Fri</span>
             </div>   
         </div>
-        <div>hej</div>
-        <div>hej</div>
-        <div>hej</div>
+        <div class="schedule-header-dates">
+            <h4>Week 19 (5/5-9/5)</h4>
+            <div class="days">
+                <span>Mon</span>
+                <span>Tue</span>
+                <span>Wen</span>
+                <span>Thu</span>
+                <span>Fri</span>
+            </div>   
+        </div>
+        <div class="schedule-header-dates">
+            <h4>Week 20 (12/5-16/5)</h4>
+            <div class="days">
+                <span>Mon</span>
+                <span>Tue</span>
+                <span>Wen</span>
+                <span>Thu</span>
+                <span>Fri</span>
+            </div>   
+        </div>
+        <div class="schedule-header-dates">
+            <h4>Week 21 (19/5-23/5)</h4>
+            <div class="days">
+                <span>Mon</span>
+                <span>Tue</span>
+                <span>Wen</span>
+                <span>Thu</span>
+                <span>Fri</span>
+            </div>   
+        </div>
     </div>
 </template>
 
 <script setup>
+import searchLogo from '../assets/magnifying-glass.png'
 </script>
 
 <style scope>
 .schedule-header {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar > input {
+    background-color: #F1F1F1;
+    border: none;
+}
+
+.search-bar > img {
+    height: 16px;
+    margin-right: 0.4rem;
 }
 
 .schedule-header-dates > h4{
