@@ -21,11 +21,9 @@ defineProps({
 
 <style scope>
 .schedule-overview-style {
-    display: flex;
-    border: 1px solid black;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     background-color: #F1F1F1;
     margin-inline: 1rem;
-    padding-inline-end: 0.5rem;
 }
 </style>

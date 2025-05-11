@@ -23,13 +23,12 @@ import employeeImg from '../assets/user.png';
     align-items: center;
     justify-content: flex-start;
     border: 1px solid #E7E7E7;
-    padding-inline: 0.5rem;
 }
 
 .employee-overview > img {
     width: 34px;
     height: 34px;
-    margin-inline: 0.5rem;
+    margin-inline: 0.9rem;
 }
 
 .employee-profession {

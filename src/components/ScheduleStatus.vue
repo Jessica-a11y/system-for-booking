@@ -1,9 +1,10 @@
 <template>
-    <div>
+    <div class="status-bar">
         <button :style = "{ backgroundColor: color }"></button>
-        <button></button>
-        <button></button>
-        <button></button>
+        <button :style = "{ backgroundColor: color }"></button>
+        <button :style = "{ backgroundColor: color }"></button>
+        <button :style = "{ backgroundColor: color }"></button>
+        <button :style = "{ backgroundColor: color }"></button>
     </div>
 </template>
 
@@ -17,6 +18,14 @@ let colorArray = ["#FF8000", "#800080", "#008080", "#FFD700"]
 </script>
 
 <style scoped>
+.status-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+  padding-inline: 1.5rem;
+  
+}
+
 button{
   background-color: #FF8000;
   border: none;
@@ -25,7 +34,8 @@ button{
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
   cursor: pointer;
+  height: 23px;
+  width: 23px;
 }
 </style>
