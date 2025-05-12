@@ -59,8 +59,6 @@ h2 {
 
  /*Hide Saturday and Sundays */
  
-:deep(.vc-weeks .vc-weekday:nth-child(7)),
-:deep(.vc-weeks .vc-weekday:nth-child(8)),
 :deep(.vc-weeks .vc-day:nth-child(7)),
 :deep(.vc-weeks .vc-day:nth-child(8)) {
   color: #F2F2F2;

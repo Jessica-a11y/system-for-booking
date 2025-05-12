@@ -76,7 +76,7 @@ h1 {
   width: 100%;
   flex-direction: column;
   background-color: #F2F2F2;
-  margin-right: 5rem;
+  margin-right: 0.3rem;
 }
 
 .checkboxes-professions {
