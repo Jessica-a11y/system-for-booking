@@ -1,10 +1,10 @@
 <template>
     <div class="schedule-overview-style">
         <EmployeeTag :name="name" :professions="professions"></EmployeeTag>
-        <ScheduleStatus></ScheduleStatus>
-        <ScheduleStatus></ScheduleStatus>
-        <ScheduleStatus></ScheduleStatus>
-        <ScheduleStatus></ScheduleStatus>
+        <ScheduleStatus :status="status"></ScheduleStatus>
+        <ScheduleStatus :status="status"></ScheduleStatus>
+        <ScheduleStatus :status="status"></ScheduleStatus>
+        <ScheduleStatus :status="status"></ScheduleStatus>
     </div>
   
 </template>
@@ -16,7 +16,8 @@ import ScheduleStatus from './ScheduleStatus.vue';
 
 defineProps({
     name: String,
-    professions: Array
+    professions: Array,
+    status: String
 })
 </script>
 
