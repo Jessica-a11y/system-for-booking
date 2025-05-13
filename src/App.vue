@@ -1,7 +1,6 @@
 <script setup>
 import EmployeeCard from './components/EmployeeCard.vue';
 import avatar from './assets/cartoon-picture.png';
-/* import ScheduleOverview from './components/ScheduleOverview.vue'; */
 import LeftMenuSelector from './components/LeftMenuSelector.vue';
 import CalendarLeftMenu from './components/CalendarLeftMenu.vue';
 import ScheduleInfo from './components/ScheduleInfo.vue';
@@ -42,7 +41,8 @@ export default {
     </div>
 
   <div class="schedule-planner">
-    <ScheduleInfo :employees="employees"></ScheduleInfo>
+    <ScheduleInfo :employees="employees">
+    </ScheduleInfo>
   </div>
 </div>
 </template>
