@@ -1,7 +1,15 @@
 <template>
     <div style="position: relative;">
         <img class="info-icon" :src="infoIcon" alt="Info" @mouseenter="showTooltip = true" @mouseleave="showTooltip = false">
-        <div v-if="showTooltip" class="info-tooltip">Detta är information om schemat.</div>
+        <div v-if="showTooltip" class="info-tooltip">
+            <div>
+                <div :style = "{background : 'linear-gradient(to right, #FF8000 50%, #D9D9D9 50%)'}"></div>
+                <span>50%</span>
+                <div :style = "{backgroundColor : statusColors[0]}"></div>
+                <span>100%</span>
+            </div>
+            <span>Halvdag</span><span>Heldag</span>
+        </div>
         <div class="schedule-top">
             <div v-for="status, index in statusList" class="schedule-inner-info">
                 <div :style = "{backgroundColor : statusColors[index]}"></div>
@@ -38,7 +46,7 @@ const statusColors = ["#FF8000", "#800080", "#008080", "#FFD700", "#D9D9D9"]
 <style scoped>
 .info-icon {
     position: absolute;
-    right: 31%;
+    right: 30.5%;
     width: 10px;
 }
 
@@ -75,12 +83,27 @@ const statusColors = ["#FF8000", "#800080", "#008080", "#FFD700", "#D9D9D9"]
   position: absolute;
   top: 20px;
   right: 19%;
-  background-color: #333;
-  color: white;
+  border: 1px solid black;
+  background-color: white;
   padding: 6px 10px;
   border-radius: 4px;
   font-size: 12px;
   white-space: nowrap;
   z-index: 1000;
+}
+
+.info-tooltip > div {
+    display: flex;
+}
+
+.info-tooltip > span {
+    margin-inline: 0.3rem;
+}
+
+.info-tooltip > div > div{
+    border: 1px solid black;
+    width: 14px;
+    height: 14px;
+    margin-inline: 0.3rem;
 }
 </style>
