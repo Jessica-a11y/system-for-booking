@@ -1,26 +1,39 @@
 <template>
     <div>
-        <div class="schedule-info">
+        <div class="schedule-top">
             <div v-for="status, index in statusList" class="schedule-inner-info">
                 <div :style = "{backgroundColor : statusColors[index]}"></div>
                 <span>{{status}}</span>
             </div>
         </div>
-        <ScheduleHeader></ScheduleHeader>
+        <div class="schedule-info-bottom">
+            <ScheduleHeader></ScheduleHeader>
+            <ScheduleOverview v-for="em in employees" :name="em?.name" :professions="em?.professions"></ScheduleOverview>
+        </div>
+        
     </div>
 </template>
 
 <script setup>
 import ScheduleHeader from './ScheduleHeader.vue';
+import ScheduleOverview from './ScheduleOverview.vue';
+
+defineProps({
+    employees: Array,
+    name: String,
+    professions: Array
+})
 
 const statusList = ["Booked", "Absent", "Preliminary", "Available", "Free"]
 const statusColors = ["#FF8000", "#800080", "#008080", "#FFD700", "#D9D9D9"]
 </script>
 
 <style scoped>
-.schedule-info {
+.schedule-top {
     display: flex;
     justify-content: end;
+    margin-top: 0.2rem;
+    margin-bottom: 1rem;
 }
 
 
@@ -31,10 +44,14 @@ const statusColors = ["#FF8000", "#800080", "#008080", "#FFD700", "#D9D9D9"]
     font-size: small;
 }
 
-.schedule-info > div > div {
+.schedule-top > div > div {
     border: 1px solid black;
     width: 14px;
     height: 14px;
     margin-right: 0.3rem;
+}
+
+.schedule-info-bottom {
+     background-color: #F1F1F1;
 }
 </style>

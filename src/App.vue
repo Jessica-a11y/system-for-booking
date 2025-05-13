@@ -1,7 +1,7 @@
 <script setup>
 import EmployeeCard from './components/EmployeeCard.vue';
 import avatar from './assets/cartoon-picture.png';
-import ScheduleOverview from './components/ScheduleOverview.vue';
+/* import ScheduleOverview from './components/ScheduleOverview.vue'; */
 import LeftMenuSelector from './components/LeftMenuSelector.vue';
 import CalendarLeftMenu from './components/CalendarLeftMenu.vue';
 import ScheduleInfo from './components/ScheduleInfo.vue';
@@ -9,7 +9,6 @@ import ScheduleInfo from './components/ScheduleInfo.vue';
 
 <script>
 import EmployeeService from './services/EmployeeService';
-import ScheduleOverview from './components/ScheduleOverview.vue';
 
 export default {
   data() {
@@ -43,9 +42,7 @@ export default {
     </div>
 
   <div class="schedule-planner">
-    <ScheduleInfo></ScheduleInfo>
-      <ScheduleOverview v-for="em in employees" :name="em?.name" :professions="em?.professions"></ScheduleOverview>
-    
+    <ScheduleInfo :employees="employees"></ScheduleInfo>
   </div>
 </div>
 </template>
@@ -96,7 +93,7 @@ h1 {
   .schedule-planner {
     display: flex;
     flex-direction: column;
-    background-color: #F1F1F1;
+   
     margin-inline: 1rem;
     margin-block: 2rem;
   }

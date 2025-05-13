@@ -4,6 +4,7 @@
         <button :style = "{ backgroundColor: color }"></button>
         <button :style = "{ backgroundColor: color }"></button>
         <button :style = "{ backgroundColor: color }"></button>
+        <button :style = "{ backgroundColor: color }"></button>
     </div>
 </template>
 

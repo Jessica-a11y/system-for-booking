@@ -16,8 +16,7 @@ import ScheduleStatus from './ScheduleStatus.vue';
 
 defineProps({
     name: String,
-    professions: Array,
-    status: String
+    professions: Array
 })
 </script>
 
