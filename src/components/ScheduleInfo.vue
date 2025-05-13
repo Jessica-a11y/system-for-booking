@@ -52,6 +52,9 @@ const statusColors = ["#FF8000", "#800080", "#008080", "#FFD700", "#D9D9D9"]
 }
 
 .schedule-info-bottom {
-     background-color: #F1F1F1;
+    background-color: #F1F1F1;
+    border: 2px solid #E1E1E1;
+    height: 800px;
+    overflow-y: scroll;
 }
 </style>

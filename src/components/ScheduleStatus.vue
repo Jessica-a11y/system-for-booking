@@ -6,10 +6,7 @@
 
 <script setup>
 let colorArray = ["#FF8000", "#800080", "#008080", "#FFD700"]
-  /* function setColor() {
-    return colorArray[Math.floor(Math.random() * colorArray.length)]
-  }  */
-  let color = colorArray[Math.floor(Math.random() * colorArray.length)]
+let color = colorArray[Math.floor(Math.random() * colorArray.length)]
 
 </script>
 

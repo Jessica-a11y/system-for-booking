@@ -1,11 +1,11 @@
 <template>
-     <div class="employee-overview">
-    <img :src="employeeImg" alt="User imag" />
-    <div>
-      <span class="employee-profession">{{ professions?.join(' & ') }}</span><br>
-      <span class="employee-name">{{ name }}</span>
+    <div class="employee-overview">
+        <img :src="employeeImg" alt="User imag" />
+        <div>
+            <span class="employee-profession">{{ professions?.join(' & ') }}</span>
+            <span class="employee-name">{{ name }}</span>
+        </div>
     </div>
-  </div>
 </template>
 
 <script setup>
@@ -23,19 +23,26 @@ import employeeImg from '../assets/user.png';
     align-items: center;
     justify-content: flex-start;
     border: 1px solid #E7E7E7;
+    padding-inline: 1.4rem;
+    padding-block: 0.5rem;
 }
 
 .employee-overview > img {
     width: 34px;
     height: 34px;
-    margin-inline: 0.9rem;
+    padding-right: 0.5rem;
+}
+
+.employee-overview > div {
+    display: flex;
+    flex-direction: column;
 }
 
 .employee-profession {
-    font-size:small;
+    font-size: 12px;
 }
 .employee-name {
-    font-size: 0.9rem;
+    font-size: 14px;
     font-weight: bold;
 }
 </style>
