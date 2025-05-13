@@ -1,19 +1,15 @@
 <template>
     <div class="status-bar">
-        <button :style = "{ backgroundColor: color }"></button>
-        <button :style = "{ backgroundColor: color }"></button>
-        <button :style = "{ backgroundColor: color }"></button>
-        <button :style = "{ backgroundColor: color }"></button>
-        <button :style = "{ backgroundColor: color }"></button>
+      <button v-for="n in 5" :style="{ backgroundColor: color}"></button>
     </div>
 </template>
 
 <script setup>
 let colorArray = ["#FF8000", "#800080", "#008080", "#FFD700"]
-  function setColor() {
+  /* function setColor() {
     return colorArray[Math.floor(Math.random() * colorArray.length)]
-  } 
-  let color = setColor()
+  }  */
+  let color = colorArray[Math.floor(Math.random() * colorArray.length)]
 
 </script>
 
