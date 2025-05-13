@@ -28,7 +28,6 @@
 import ScheduleHeader from './ScheduleHeader.vue';
 import ScheduleOverview from './ScheduleOverview.vue';
 import infoIcon from '../assets/info.png'
-
 import { ref } from 'vue'
 
 const showTooltip = ref(false)

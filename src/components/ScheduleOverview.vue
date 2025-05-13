@@ -1,7 +1,7 @@
 <template>
     <div class="schedule-overview-style">
         <EmployeeTag :name="name" :professions="professions"></EmployeeTag>
-        <ScheduleStatus v-for="n in 4" :status="status"></ScheduleStatus>
+        <ScheduleStatus v-for="n in 4"></ScheduleStatus>
     </div>
   
 </template>

@@ -1,12 +1,31 @@
 <template>
     <div class="status-bar">
-      <button v-for="n in 5" :style="{ backgroundColor: color}"></button>
+      <button v-for="day in weekdays" :style="{ backgroundColor: color}" :class="day" @mouseenter="handleMouseEnter(day)" @mouseleave="handleMouseLeave(day)"></button>
+    </div>
+    <div v-if="showWeekdayPlan" class="info-weekday-plan">
+      Tips
     </div>
 </template>
 
 <script setup>
-let colorArray = ["#FF8000", "#800080", "#008080", "#FFD700"]
+import { ref } from 'vue'
+
+const showWeekdayPlan = ref(false)
+let colorArray = ['#FF8000', '#800080', '#008080', '#FFD700']
 let color = colorArray[Math.floor(Math.random() * colorArray.length)]
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri']
+
+function handleMouseEnter(day) {
+  if (day === 'wed') {
+    showWeekdayPlan.value = true
+  }
+}
+
+function handleMouseLeave(day) {
+  if (day === 'wed') {
+    showWeekdayPlan.value = false
+  }
+}
 
 </script>
 
@@ -31,7 +50,16 @@ button{
   width: 23px;
 }
 
-.fifty {
-  background: linear-gradient(to right, #FF8000 50%, #FFFFFF 50%);
+.info-weekday-plan {
+  position: absolute;
+  top: 20px;
+  right: 60%;
+  border: 1px solid black;
+  background-color: white;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 1000;
 }
 </style>
