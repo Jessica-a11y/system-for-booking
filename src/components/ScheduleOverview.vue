@@ -1,10 +1,7 @@
 <template>
     <div class="schedule-overview-style">
         <EmployeeTag :name="name" :professions="professions"></EmployeeTag>
-        <ScheduleStatus :status="status"></ScheduleStatus>
-        <ScheduleStatus :status="status"></ScheduleStatus>
-        <ScheduleStatus :status="status"></ScheduleStatus>
-        <ScheduleStatus :status="status"></ScheduleStatus>
+        <ScheduleStatus v-for="n in 4" :status="status"></ScheduleStatus>
     </div>
   
 </template>
