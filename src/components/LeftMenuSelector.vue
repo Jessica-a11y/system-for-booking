@@ -38,14 +38,16 @@ const professionChoices = ref([
 
 <style scoped>
 h3 {
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+    margin-bottom: 0.2rem;
 }
 
 .checkBox-professions {
     display: flex;
     flex-direction: column;
     background-color: #F2F2F2;
-    gap: 0.5rem;
+    gap: 0.3rem;
 }
 
 .checkbox-item {
@@ -55,6 +57,7 @@ h3 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: small;
     color: #333333;
+    font-weight:600;
 }
 
 input[type=checkbox] {
