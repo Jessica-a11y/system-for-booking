@@ -1,6 +1,6 @@
 <template>
     <div class="checkBox-professions">
-        <h3>Yrkesroll</h3>
+        <h3>Profession</h3>
 
         <div class="checkbox-item">
             <input type="checkbox" id="profession-choice1" value="Carpenter" v-model="professionChoices" />
@@ -62,12 +62,9 @@ h3 {
 
 input[type=checkbox] {
     accent-color: #E1E1E1;
-    background-color: #E1E1E1;
-
 }
 
 input[type=checkbox]:checked::before {
-
     background-color: #E1E1E1;
 }
 </style>
