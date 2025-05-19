@@ -5,44 +5,10 @@
             <input  type="text" placeholder="Search for personnel"/>
         </div>
         
-        <div class="schedule-header-dates">
-            <h4>Week 18 (18/4-2/5)</h4>
+        <div class="schedule-header-dates" v-for="week in weekdays">
+            <h4>{{ week }}</h4>
             <div class="days">
-                <span>Mon</span>
-                <span>Tue</span>
-                <span>Wen</span>
-                <span>Thu</span>
-                <span>Fri</span>
-            </div>   
-        </div>
-        <div class="schedule-header-dates">
-            <h4>Week 19 (5/5-9/5)</h4>
-            <div class="days">
-                <span>Mon</span>
-                <span>Tue</span>
-                <span>Wen</span>
-                <span>Thu</span>
-                <span>Fri</span>
-            </div>   
-        </div>
-        <div class="schedule-header-dates">
-            <h4>Week 20 (12/5-16/5)</h4>
-            <div class="days">
-                <span>Mon</span>
-                <span>Tue</span>
-                <span>Wen</span>
-                <span>Thu</span>
-                <span>Fri</span>
-            </div>   
-        </div>
-        <div class="schedule-header-dates">
-            <h4>Week 21 (19/5-23/5)</h4>
-            <div class="days">
-                <span>Mon</span>
-                <span>Tue</span>
-                <span>Wen</span>
-                <span>Thu</span>
-                <span>Fri</span>
+                <span v-for="day in days">{{ day }}</span>
             </div>   
         </div>
     </div>
@@ -50,6 +16,9 @@
 
 <script setup>
 import searchLogo from '../assets/magnifying-glass.png'
+
+const weekdays = ["Week 18 (18/4-2/5)", "Week 19 (5/5-9/5)", "Week 20 (12/5-16/5)", "Week 21 (19/5-23/5)"]
+const days = ["Mon", "Tue", "Wen", "Thu", "Fri"]
 </script>
 
 <style scope>

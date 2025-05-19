@@ -3,7 +3,6 @@
         <EmployeeTag :name="name" :professions="professions"></EmployeeTag>
         <ScheduleStatus v-for="n in 4"></ScheduleStatus>
     </div>
-  
 </template>
 
 <script setup>
