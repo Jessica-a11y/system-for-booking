@@ -3,7 +3,7 @@ import EmployeeCard from './components/EmployeeCard.vue';
 import avatar from './assets/cartoon-picture.png';
 import LeftMenuSelector from './components/LeftMenuSelector.vue';
 import CalendarLeftMenu from './components/CalendarLeftMenu.vue';
-import ScheduleInfo from './components/ScheduleInfo.vue';
+import StatusLegend from './components/StatusLegend.vue';
 </script>
 
 <script>
@@ -41,8 +41,8 @@ export default {
     </div>
 
   <div class="schedule-planner">
-    <ScheduleInfo :employees="employees">
-    </ScheduleInfo>
+    <StatusLegend :employees="employees">
+    </StatusLegend>
   </div>
 </div>
 </template>
@@ -95,7 +95,7 @@ h1 {
     flex-direction: column;
    
     margin-inline: 1rem;
-    margin-block: 2rem;
+    margin-top: 2rem;
   }
 </style>
 

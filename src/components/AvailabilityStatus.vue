@@ -1,16 +1,16 @@
 <template>
-    <div class="status-bar">
+    <div class="weekday-status-bar">
       <button v-for="day in weekdays" :style="{ backgroundColor: color}" :class="day" @mouseenter="handleMouseEnter(day)" @mouseleave="handleMouseLeave(day)"></button>
     </div>
 
-    <div v-if="showWeekdayPlan"  class="info-weekday-plan">
-      <div class="info-weekday-plan-img">
+    <div v-if="showWeekdayPlan"  class="weekday-details">
+      <div class="weekday-details-images">
         <img src="../assets/Icon_edit.png" alt="Edit icon">
         <img src="../assets/Group 363.png" alt="Group">
       </div>
-      <div class="info-weekday-plan-info">
+      <div class="weekday-details-info">
         <button style="background-color: #FF8000;"></button>
-        <div class="schedule-status-position">
+        <div class="schedule-details">
           <p>Mölndals kommun</p>
           <span>Tisdag, den 30 april 8:30-16:00</span>
         </div>
@@ -19,7 +19,7 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue'
+import { ref } from 'vue'
 
 const showWeekdayPlan = ref(false)
 let colorArray = ['#FF8000', '#800080', '#008080', '#FFD700']
@@ -40,7 +40,7 @@ function handleMouseLeave(day) {
 </script>
 
 <style scoped>
-.status-bar {
+.weekday-status-bar {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   padding-inline: 1.5rem;
@@ -60,7 +60,7 @@ button{
   width: 23px;
 }
 
-.info-weekday-plan {
+.weekday-details {
   position: absolute;
   top: 20px;
   right: 60%;
@@ -72,36 +72,36 @@ button{
   z-index: 1000;
 }
 
-.info-weekday-plan-img {
+.weekday-details-images {
   display: flex;
   justify-content: end;
 }
 
-.info-weekday-plan-img > img{
+.weekday-details-images > img{
   height: 10px;
   margin-left: 1rem;
 }
 
-.info-weekday-plan-info {
+.weekday-details-info {
   display: flex;
   align-items: center;
   padding-block: 0.6rem;
 }
 
-.schedule-status-position {
+.schedule-details {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin-left: 0.7rem;
 }
 
-.schedule-status-position > p {
+.schedule-details > p {
   margin: 0;
   padding: 0;
   font-size: 14px;
 }
 
-.schedule-status-position > span {
+.schedule-details > span {
   font-size: 10px;
 }
 </style>

@@ -1,15 +1,15 @@
 <template>
-    <div class="employee-overview">
-        <img :src="employeeImg" alt="User imag" />
+    <div class="employee-profile">
+        <img :src="profileImg" alt="User imag" />
         <div>
-            <span class="employee-profession">{{ professions?.join(' & ') }}</span>
-            <span class="employee-name">{{ name }}</span>
+            <span class="profession-list">{{ professions?.join(' & ') }}</span>
+            <span class="name">{{ name }}</span>
         </div>
     </div>
 </template>
 
 <script setup>
-import employeeImg from '../assets/user.png';
+import profileImg from '../assets/user.png';
 
     defineProps({
         name: String,
@@ -18,7 +18,7 @@ import employeeImg from '../assets/user.png';
 </script> 
 
 <style scoped>
-.employee-overview {
+.employee-profile {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -27,21 +27,21 @@ import employeeImg from '../assets/user.png';
     padding-block: 0.5rem;
 }
 
-.employee-overview > img {
+.employee-profile > img {
     width: 34px;
     height: 34px;
     padding-right: 0.5rem;
 }
 
-.employee-overview > div {
+.employee-profile > div {
     display: flex;
     flex-direction: column;
 }
 
-.employee-profession {
+.profession-list {
     font-size: 12px;
 }
-.employee-name {
+.name {
     font-size: 14px;
     font-weight: bold;
 }

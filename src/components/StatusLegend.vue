@@ -1,7 +1,7 @@
 <template>
     <div style="position: relative;">
         <img class="info-icon" :src="infoIcon" alt="Info" @mouseenter="showTooltip = true" @mouseleave="showTooltip = false">
-        <div v-if="showTooltip" class="info-tooltip">
+        <div v-if="showTooltip" class="schedule-tooltip">
             <div>
                 <div :style = "{background : 'linear-gradient(to right, #FF8000 50%, #D9D9D9 50%)'}"></div>
                 <span>50%</span>
@@ -10,23 +10,22 @@
             </div>
             <span>Halvdag</span><span>Heldag</span>
         </div>
-        <div class="schedule-top">
-            <div v-for="status, index in statusList" class="schedule-inner-info">
+        <div class="schedule-status-section">
+            <div v-for="status, index in statusList" class="status-indicator">
                 <div :style = "{backgroundColor : statusColors[index]}"></div>
                 <span>{{status}}</span>
             </div>
         </div>
-        <div class="schedule-info-bottom">
-            <ScheduleHeader></ScheduleHeader>
-            <ScheduleOverview v-for="em in employees" :name="em?.name" :professions="em?.professions"></ScheduleOverview>
+        <div class="employee-list-section">
+            <WeekHeader></WeekHeader>
+            <EmployeeRow v-for="em in employees" :name="em?.name" :professions="em?.professions"></EmployeeRow>
         </div>
-        
     </div>
 </template>
 
 <script setup>
-import ScheduleHeader from './ScheduleHeader.vue';
-import ScheduleOverview from './ScheduleOverview.vue';
+import WeekHeader from './WeekHeader.vue';
+import EmployeeRow from './EmployeeRow.vue';
 import infoIcon from '../assets/info.png'
 import { ref } from 'vue'
 
@@ -49,7 +48,7 @@ const statusColors = ["#FF8000", "#800080", "#008080", "#FFD700", "#D9D9D9"]
     width: 10px;
 }
 
-.schedule-top {
+.schedule-status-section {
     display: flex;
     justify-content: end;
     margin-top: 0.2rem;
@@ -57,28 +56,28 @@ const statusColors = ["#FF8000", "#800080", "#008080", "#FFD700", "#D9D9D9"]
 }
 
 
-.schedule-inner-info {
+.status-indicator {
     display: flex;
     align-items: center;
     margin-inline: 0.6rem;
     font-size: small;
 }
 
-.schedule-top > div > div {
+.schedule-status-section > div > div {
     border: 1px solid black;
     width: 14px;
     height: 14px;
     margin-right: 0.3rem;
 }
 
-.schedule-info-bottom {
+.employee-list-section {
     background-color: #F1F1F1;
     border: 2px solid #E1E1E1;
     height: 800px;
     overflow-y: scroll;
 }
 
-.info-tooltip {
+.schedule-tooltip {
   position: absolute;
   top: 20px;
   right: 19%;
@@ -91,15 +90,15 @@ const statusColors = ["#FF8000", "#800080", "#008080", "#FFD700", "#D9D9D9"]
   z-index: 1000;
 }
 
-.info-tooltip > div {
+.schedule-tooltip > div {
     display: flex;
 }
 
-.info-tooltip > span {
+.schedule-tooltip > span {
     margin-inline: 0.3rem;
 }
 
-.info-tooltip > div > div{
+.schedule-tooltip > div > div{
     border: 1px solid black;
     width: 14px;
     height: 14px;
