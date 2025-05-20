@@ -8,7 +8,7 @@
 
 @media (max-width: 1440px) {
     body {
-        transform: scale(0.85); /* Skalar ner innehållet till 80% */
-        transform-origin: top left; /* Gör att sidan skalas från toppen vänster */
+        transform: scale(0.85); 
+        transform-origin: top left; 
     }
 }
