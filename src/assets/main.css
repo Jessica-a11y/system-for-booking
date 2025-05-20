@@ -1,6 +1,14 @@
 @import './base.css';
 
 #app {
-    max-width: 1440px;
+    min-width: 1440px;
+    width: 100%;
     margin: 0 auto;
+}
+
+@media (max-width: 1440px) {
+    body {
+        transform: scale(0.85); /* Skalar ner innehållet till 80% */
+        transform-origin: top left; /* Gör att sidan skalas från toppen vänster */
+    }
 }
